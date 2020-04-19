@@ -4,7 +4,7 @@ $docker run -itd alpine
 $docker commit 993a664d alpine:ashish
 $docker run -it --name ashishc1q1 alpine:ashish date +"%H:%M:%S" >> question1.txt
 $cat question1.txt
->>>12:19:53                                                                                                                                     
+>>>12:48:52                                                                                                                                     
 
 
 Ques 2:
