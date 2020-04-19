@@ -1,6 +1,49 @@
+Ques 1:
 $docker pull alpine
 $docker run -itd alpine
 $docker commit 993a664d alpine:ashish
-$docker run -it --name ashish2c1q1 alpine:ashish date +"%H:%M:%S" >> question1.txt
+$docker run -it --name ashishc1q1 alpine:ashish date +"%H:%M:%S" >> question1.txt
 $cat question1.txt
-## 
+>>>12:19:53                                                                                                                                     
+
+
+Ques 2:
+$docker build -t adhoc:ashishpandey https://github.com/redashu/summer2020dockertest.git
+$docker tag adhoc:ashishpandey ashishpandey/adhoc:ashishpandey
+$docker login
+$docker push ashishpandey/adhoc:ashishpandey
+link to dockerhub: https://hub.docker.com/repository/docker/ashishpandey/adhoc
+
+
+
+Ques 3:
+$docker run -d --name ashishc3q3 -p 6980:80 dockerashu/ckad:v2
+go in browser: http://52.204.127.145:6980/
+check q3.txt on github
+
+
+Ques 4:
+$mkdir ashish
+$cd ashish
+$git clone https://github.com/redashu/beginner-html-site-styled
+$mv beginner-html-site-styled webapp
+$touch Dockerfile
+$vim Dockerfile
+$cat Dockerfile
+>>>FROM centos                                                                                                                           
+MAINTAINER ashishpandey2000@gmail.com                                                                                                     
+RUN yum install httpd -y                                                                                                                
+COPY webapp /var/www/html/ 
+EXPOSE 80                                                                                                     
+ENTRYPOINT httpd -DFOREGROUND  
+$docker build -t ashish:q4 .
+$docker run -d --name ashishc4q4 -p 6981:80 ashish:q4
+
+
+
+Ques 5:
+$docker volume create ashishq5
+$docker pull alpine
+$docker run -it --name ashishaac5q5 -v ashishq5:/adhocvol -v /etc/passwd:/user.txt alpine sh
+>># wc -l user.txt > /adhocvol/usercount.txt
+line count : 28
