@@ -2,22 +2,22 @@ Ques 1:
 $docker pull alpine
 $docker run -itd alpine
 $docker commit 993a664d alpine:ashish
-$docker run -it --name ashishc1q1 alpine:ashish date +"%H:%M:%S" >> question1.txt
+$docker run -it --name ashish2c1q1 alpine:ashish date +"%H:%M:%S" >> question1.txt
 $cat question1.txt
 >>>12:48:52                                                                                                                                     
 
 
 Ques 2:
-$docker build -t adhoc:ashishpandey https://github.com/redashu/summer2020dockertest.git
-$docker tag adhoc:ashishpandey ashishpandey/adhoc:ashishpandey
+$docker build -t adhoc:ashish https://github.com/redashu/summer2020dockertest.git
+$docker tag adhoc:ashish ashishpandey/adhoc:ashish
 $docker login
-$docker push ashishpandey/adhoc:ashishpandey
+$docker push ashishpandey/adhoc:ashish
 link to dockerhub: https://hub.docker.com/repository/docker/ashishpandey/adhoc
 
 
 
 Ques 3:
-$docker run -d --name ashishc3q3 -p 6980:80 dockerashu/ckad:v2
+$docker run -d --name ashish2c3q3 -p 6980:80 dockerashu/ckad:v2
 go in browser: http://52.204.127.145:6980/
 check q3.txt on github
 
@@ -44,6 +44,6 @@ $docker run -d --name ashishc4q4 -p 6981:80 ashish:q4
 Ques 5:
 $docker volume create ashishq5
 $docker pull alpine
-$docker run -it --name ashishaac5q5 -v ashishq5:/adhocvol -v /etc/passwd:/user.txt alpine sh
+$docker run -it --name ashishc5q5 -v ashishq5:/adhocvol -v /etc/passwd:/user.txt alpine sh
 >># wc -l user.txt > /adhocvol/usercount.txt
 line count : 28
